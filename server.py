@@ -8,7 +8,7 @@ from database import check_reqq, get_messages, read, insert, add_text, remove, s
 
 HOST = socket.gethostbyname(socket.gethostname())
 PORT = os.environ.get('PORT')
-print(HOST)
+print(HOST, PORT)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(("0.0.0.0", int(PORT)))
