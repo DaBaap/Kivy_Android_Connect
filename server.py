@@ -9,7 +9,7 @@ PORT = 9999
 print(HOST)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(("0.0.0.0", $PORT))
+server.bind(("0.0.0.0", PORT))
 
 server.listen()
 
