@@ -2,10 +2,12 @@
 import socket
 import threading
 import time
+import os
 from database import check_reqq, get_messages, read, insert, add_text, remove, save_msgs, scene_message
 
+
 HOST = socket.gethostbyname(socket.gethostname())
-PORT = 9999
+PORT = os.environ.get('PORT')
 print(HOST)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
