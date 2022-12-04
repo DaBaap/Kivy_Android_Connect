@@ -11,7 +11,7 @@ PORT = os.environ.get('PORT')
 print(HOST)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(("0.0.0.0", PORT))
+server.bind(("0.0.0.0", int(PORT)))
 
 server.listen()
 
