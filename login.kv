@@ -1,0 +1,421 @@
+WindowManager:
+  Login:
+  Signup:
+  frontPage:
+  MessageBox:
+
+<Login>:
+  name: "Login" 
+  MDBoxLayout:
+    orientation:"vertical"
+    md_bg_color: 45/255,51/255,51/255,1
+    padding:10
+    MDBoxLayout:
+      pos_hint: {"center_x": 0.5, "top": 0.8}
+      Image:
+        source: "Images/logo.png"
+        keep_ratio:True   
+        #size_hint_x: 0.4
+        width: 100
+            
+        allow_stretch: False
+        #size: self.texture_size
+        size_hint:(0.5,0.5)     
+        pos_hint: {"center_x": 0.5, "top": 0.8} 
+
+    MDCard:
+    
+      id:login
+      size: 300, 400
+      size_hint: None, None
+      orientation: 'vertical'
+      md_bg_color: 45/255,51/255,51/255,1
+      pos_hint: {"center_x": 0.5, "center_y": 0.5}    
+      spacing: 20
+
+
+      BoxLayout:
+        Label:
+          text:"Connect"
+          bold: True
+          font_style:"H5"
+          font_size:35
+          pos_hint:{'center_x': 0.5}
+          
+      MDTextField:
+        id:user
+        hint_text: "Username"
+        font:"Button"
+        #helper_text: "or click on forgot username"
+        helper_text_mode: "on_focus"
+        icon_left: "account"
+        icon_right_color: 
+        pos_hint:{'center_x': 0.5}
+        size_hint_x:None
+        width:300
+        line_color_focus: 192/255, 192/255, 194/255, 1
+        theme_icon_right_color : 'custom'
+        icon_right_color : 45/255,51/255,51/255,1
+
+      MDTextField:
+        id:passw
+        hint_text: "Password"
+        #helper_text: "or click on forgot username"
+        helper_text_mode: "on_focus"
+        icon_left: "key-variant"
+        theme_icon_right_color : 'custom'
+        icon_right_color: 45/255,51/255,51/255,1
+        pos_hint:{'center_x': 0.5}
+        size_hint_x:None
+        width:300
+        password: True
+        
+      MDFillRoundFlatButton:
+        md_bg_color:236/255,247/255,249/255,1
+        text_color: 52/255,81/255,124/255,1
+        markup:True
+        text: "[b]LOG IN[/b]"
+        font_size: 20
+        pos_hint: {"center_x": 0.5}
+        size:(.5,.5)
+        size_hint: None, None
+        on_press: app.logger()
+
+      MDFillRoundFlatButton:
+        md_bg_color:236/255,247/255,249/255,1
+        text_color: 52/255,81/255,124/255,1
+        markup:True
+        text: "[b]SIGN UP[/b]"
+        font_size: 20
+        padding:10
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5}
+        width: dp(500)
+        on_release: 
+          app.root.current = "Signup"
+          root.manager.transition.direction = "left"
+
+    Widget:
+      size_hint_y: None
+      height: 150
+
+######################Signup#############
+<Signup>:
+  name: "Signup" 
+  MDBoxLayout:
+    orientation:"vertical"
+    md_bg_color: 45/255,51/255,51/255,1
+    MDBoxLayout:
+      #pos_hint: {"center_x": 0.5, "center_y": 0.5}
+      Image:
+        source: "Images/logo.png"
+        keep_ratio:True   
+        #size_hint_x: 0.4
+        width: 100
+            
+        allow_stretch: False
+        #size: self.texture_size
+        size_hint:(0.5,0.5)     
+        pos_hint: {"center_x": 0.5, "top": 0.7} 
+
+    MDCard:
+      id:login
+      size:300,400
+      size_hint: None, None
+      orientation: 'vertical'
+      md_bg_color: 45/255,51/255,51/255,1
+      pos_hint: {"center_x": 0.5, "center_y": 0.5}    
+      spacing: 20
+      BoxLayout:
+        Label:
+          text:"Connect"
+          font_style:"H5"
+          bold: True
+          font_size:35
+          pos_hint:{'center_x': 0.5}
+      MDGridLayout:
+        cols:2    
+        rows:2
+        pos_hint:{'center_x': 0.5, }
+        spacing:10
+        padding:-50
+        
+        MDTextField:
+          id:first
+          mode: "fill"
+          hint_text: "First Name"
+          font:"Button"
+          helper_text_mode: "on_focus"
+          radius: 10, 10, 10, 10
+          # icon_right_color: 
+          size_hint_x:None
+          width:200
+          line_color_focus: 192/255, 192/255, 194/255, 1
+          theme_icon_right_color : 'custom'
+          fill_color_normal:53/255,94/255,100/255,1
+
+        MDTextField:
+          id:last
+          mode: "fill"
+          hint_text: "Last Name"
+          helper_text_mode: "on_focus"
+          theme_icon_right_color : 'custom'
+          size_hint_x:None
+          fill_color_normal:53/255,94/255,100/255,1
+          width:200
+          radius: 10, 10, 10, 10
+          color_active: 1,0,0,1
+      
+      MDGridLayout:
+        id: signuser
+        rows:4
+        pos_hint:{'center_x': 0.55}
+        spacing:10
+        padding:-50
+        MDTextField:
+          pos_hint:{"center_x":0.5}
+          id:username
+          radius: 10, 10, 10, 10
+          padding:30
+
+          mode: "fill"
+          hint_text: "@Username"
+          helper_text_mode: "on_focus"
+          theme_icon_right_color : 'custom'
+          size_hint_x:None
+          fill_color_normal:53/255,94/255,100/255,1
+          width:370
+          color_active: 1,0,0,1
+
+        MDTextField:
+          id:password
+          pos_hint:{"center_x":0.5}
+          mode: "fill"
+          hint_text: "Password"
+          helper_text_mode: "on_focus"
+          theme_icon_right_color : 'custom'
+          size_hint_x:None
+          fill_color_normal:53/255,94/255,100/255,1
+          width:370
+          color_active: 1,0,0,1
+          password: True
+          radius: 10, 10, 10, 10
+
+
+
+        MDTextField:
+          id:cpass
+          pos_hint:{"center_x":0.5}
+          mode: "fill"
+          hint_text: "Confirm Password"
+          helper_text_mode: "on_focus"
+          theme_icon_right_color : 'custom'
+          size_hint_x:None
+          fill_color_normal:53/255,94/255,100/255,1
+          width:370
+          color_active: 1,0,0,1
+          password: True
+          radius: 10, 10, 10, 10
+
+         
+        MDGridLayout:
+          rows:2    
+          pos_hint:{'center_x': 0.5}
+          spacing:10
+          padding:30
+
+          MDFillRoundFlatButton:
+            md_bg_color:236/255,247/255,249/255,1
+            text_color: 52/255,81/255,124/255,1
+            markup:True
+            text: "[b]Create[/b]"
+            font_size: 20
+            pos_hint: {"center_x": 0.5}
+            size:(.5,.5)
+            size_hint: None, None
+            on_release: 
+
+              password.error = True if password.text != cpass.text or password.text == "" else False
+              cpass.error = True if password.text != cpass.text or cpass.text == "" else False
+              username.error = True if username.text == "" else False
+              first.error = True if first.text == "" else False
+              last.error = True if last.text == "" else False
+              app.create() if password.text == cpass.text else ""
+              app.root.current = "Login" if password.text == cpass.text and password.text != "" and cpass.text != "" and username.error == False else "Signup"
+
+
+              root.manager.transition.direction = "right"
+
+          MDFillRoundFlatButton:
+            md_bg_color:236/255,247/255,249/255,1
+            text_color: 52/255,81/255,124/255,1
+            markup:True
+            text: "[b]   Back   [/b]"
+            font_size: 20
+            padding:10
+            size_hint: None, None
+            pos_hint: {"center_x": 0.8}
+            width: dp(500)
+            on_release: 
+              app.root.current = "Login"
+              root.manager.transition.direction = "right"
+
+    Widget:
+      size_hint_y: None
+      height: 400    
+    
+
+
+######################frontPage################
+
+
+<frontPage>:
+
+  name: "frontPage" 
+  MDNavigationLayout:
+    swipe_distance: 40
+    ScreenManager:
+      Screen:
+        MDBoxLayout:
+          orientation:"vertical"
+          md_bg_color: 45/255,51/255,51/255,1
+          #pos_hint:{"center_x":0.5}
+          MDTopAppBar:
+            #orientation:"horizontal"
+            markup:True
+            title: "[color=66c8ca]Connect[/color]"
+            font_style:"H2"
+
+            elevation:4
+            md_bg_color: 53/255,94/255,100/255,1
+            right_action_items: [['Images/Plus.png', lambda x: [nav_drawer.set_state('toggle'), app.check_req()]]]
+            ##################################################################
+          
+          MDScrollViewRefreshLayout:
+            id: refresh_layout
+            refresh_callback: app.refresh_callback
+            root_layout: root
+            MDBoxLayout:
+              orientation:"vertical"
+              padding: 40
+
+              MDGridLayout:
+                spacing: 30
+                id: friendsList
+                cols: 2
+                
+              MDFloatingActionButtonSpeedDial:
+                data:{'Create Group': ['account-group-outline', "on_press", lambda x: app.name()]}
+                root_button_anim: True 
+          
+
+    MDNavigationDrawer:
+      id:nav_drawer
+      anchor:"right"
+      width: app.width-app.width/5
+      MDBoxLayout:
+        orientation:"vertical"
+        MDTextField:
+          id:search
+          pos_hint:{"center_x":0.5}
+          mode: "round"
+          hint_text: "Search"
+          helper_text_mode: "on_focus"
+          theme_icon_right_color : 'custom'
+          size_hint_x:None
+          fill_color:53/255,94/255,100/255,1
+          width:270
+          color_active: 1,0,0,1
+          on_text: 
+            app.find_people()
+            
+        
+        MDScrollView:
+          MDList:
+            id: list
+        Widget:
+          size_hint_y: None
+          height: 150
+        BoxLayout:
+          size_hint_y: None
+          height: 250
+          id: it
+          
+          canvas.before:
+            Color:
+              rgb: (100/255,100/255,100/255,0.5)
+            Line:
+              width: 1
+              points: self.center_x-135,self.center_y+120, self.center_x+135, self.center_y+120
+          
+          MDScrollView:
+            MDList:
+              id: fReq
+  ItemConfirm:
+
+
+<ItemConfirm>:
+  on_release: root.set_icon(check)
+  CheckboxLeftWidget:
+    id: check
+    # group: "check"
+
+#########################<MessageBox>########################
+<MessageBox>:
+  name: "MessageBox"
+  MDBoxLayout:
+    orientation:"vertical"
+    md_bg_color: 45/255,51/255,51/255,1
+    # pos_hint:{"center_x":0.5}
+    MDTopAppBar:
+      id: messageboX
+      markup:True
+      font_style:"H2"
+
+      elevation:4
+      md_bg_color: 53/255,94/255,100/255,1
+      left_action_items: [["arrow-left", lambda x: app.to_fP()]]
+
+
+
+
+
+    MDBoxLayout:
+      orientation:"vertical"
+      MDBoxLayout:
+        id: root_chatroom
+        width: app.width
+        ScrollView:
+          id: msg_scroll_view
+          MDList:
+            spacing:"10dp"
+            padding:"10dp"
+            id:all_msgs
+            
+
+            
+      MDCard:
+        id:send_card
+        size_hint:None,None
+        size:root_chatroom.size[0]-10, msg_textbox.size[1]
+        pos_hint:{"center_y":0.05, "center_x":0.5}
+        spacing: dp(2)
+        padding: 10,0,0,10
+        md_bg_color: 54/255,93/255,100/255,1
+        ScrollView:
+          MDTextField:
+            id:msg_textbox
+            multiline: True
+            text_color_normal:"white"
+            text_color_focus: "white"
+            hint_text: "Type message..."
+            size_y:300
+            on_text: app.chat_textbox()
+            padding:10
+        
+        MDIconButton:
+          icon:"send"
+          on_release: app.send_msg(msg_textbox.text, messageboX.title)
+
+                
+       
