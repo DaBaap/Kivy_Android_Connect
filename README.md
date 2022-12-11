@@ -6,8 +6,8 @@ A KIVY Based chat-application using socket programming. This chat app is a basic
 
 ## Database
 The database has 2 collections.
-1. ids
-2. Messages
+1. ids.
+2. Messages.
 These collections are case sensitive therefore, spellings are important.
 For connection, is [databases.py](https://github.com/DaBaap/Kivy_Android_Connect/blob/main/database.py) [line no. 3](https://github.com/DaBaap/Kivy_Android_Connect/blob/main/database.py#L3):
     `con = f"<add your mongodb connection link>"`
