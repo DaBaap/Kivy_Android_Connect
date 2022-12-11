@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-con = f"mongodb+srv://DaBaap:iamthelaw1@androidapp.8pmmxsx.mongodb.net/?retryWrites=true&w=majority"
+con = f"<add your mongodb connection link>"
 client = MongoClient(con)
 db = client.Andriod
 
