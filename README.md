@@ -24,11 +24,11 @@ This is currently connected to localhost for both, client and server. However if
 
 For example:
 
-    `#HOST = socket.gethostbyname(socket.gethostname())
+    #HOST = socket.gethostbyname(socket.gethostname())
     **HOST = "192.168.0.1"**
     #PORT = os.environ.get('PORT')
     **PORT = "9999"**
-    print(HOST, PORT)`
+    print(HOST, PORT)
     
 **For Client**
 1. Open [main.py](https://github.com/DaBaap/Kivy_Android_Connect/blob/main/main.py) file.
@@ -36,11 +36,11 @@ For example:
 
 For example:
 
-    'def on_start(self):
+    def on_start(self):
     try:
       **client.connect(("localhost", 9999))**
       # or like this client.connect(("192.168.42.102", 9999))
-      client.recv(1024).decode("utf-8")'
+      client.recv(1024).decode("utf-8")
 
 ## Conclusion
 Following above steps will help you run the application. Note that, due to manual debugging, there are alot of print statements.
