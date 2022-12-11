@@ -6,12 +6,14 @@ import os
 from database import check_reqq, get_messages, read, insert, add_text, remove, save_msgs, scene_message
 
 
-HOST = socket.gethostbyname(socket.gethostname())
-PORT = os.environ.get('PORT')
+#HOST = socket.gethostbyname(socket.gethostname())
+HOST = 
+#PORT = os.environ.get('PORT')
+PORT =
 print(HOST, PORT)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(("0.0.0.0", int(PORT)))
+server.bind((HOST, int(PORT)))
 
 server.listen()
 
